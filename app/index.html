@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="app.css">
+
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+
+
+        <style type="text/css">
+            html,body {
+                width: 100%;
+                height: 100%;
+                margin-top: 0px;
+                text-align: center;
+            }
+
+            .airplane {
+                width:65%;
+                margin-top: 50px;
+                margin-left: auto;
+                margin-right: auto;
+                font-size:18px;
+                font-weight: bold;
+                color: white;
+                background-image: url("background.jpg");
+                padding:30px 100px 70px 100px;
+            }
+
+            h2 {
+                color: darkred;
+            }
+            h3 {
+                color: white;
+            }
+
+        </style>
+    </head>
+
+
+    <body ng-controller="geoLocController">
+        <div class="airplane">
+            <h2>Flight Tracker</h2>
+            <br>
+            <h3>Latitude: {{currentLoc.lat | number: 4}}</h3>
+            <h3>Longitude: {{currentLoc.lon | number: 4}}</h3>
+            <br>
+            Flight Level &nbsp; <input ng-model="level" placeholder="enter 1 or 2">
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" ng-click="getAirport()">Find Nearest Airport</button>
+
+            <h3 ng-show="result">Landing Airport: {{airportCode}}</h3>
+            <h3 ng-show="result">Distance to {{airportCode}}: {{minDis | number: 2}} miles</h3>
+        </div>
+
+
+
+      <script src="app.js"></script>
+      <script src="components/version/version.js"></script>
+      <script src="components/version/version-directive.js"></script>
+      <script src="components/version/interpolate-filter.js"></script>
+    </body>
+</html>
