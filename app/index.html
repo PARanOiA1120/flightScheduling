@@ -46,8 +46,8 @@
         <div class="airplane">
             <h2>Flight Tracker</h2>
             <br>
-            <h3>Latitude: {{currentLoc.lat | number: 4}}</h3>
-            <h3>Longitude: {{currentLoc.lon | number: 4}}</h3>
+            <h3>Latitude: {{currentLoc.lat}}</h3>
+            <h3>Longitude: {{currentLoc.lon}}</h3>
             <br>
             Flight Level &nbsp; <input ng-model="level" placeholder="enter 1 or 2">
             <br>
@@ -55,7 +55,7 @@
             <button type="button" class="btn btn-primary" ng-click="getAirport()">Find Nearest Airport</button>
 
             <h3 ng-show="result">Landing Airport: {{airportCode}}</h3>
-            <h3 ng-show="result">Distance to {{airportCode}}: {{minDis | number: 2}} miles</h3>
+            <h3 ng-show="result">Distance to {{airportCode}}: {{minDis | number: 3}} miles</h3>
         </div>
 
 
